@@ -41,6 +41,16 @@ namespace TODOapp.Controllers
         public IActionResult InsertNewTaskToDatabase(string taskName, string taskDeadline, string taskImportance)
         {
             //Console.WriteLine(taskName + " " + taskDeadline + " " + taskImportance);
+            if(InputValidation.isTaskNameCorrect(taskName) &&
+                InputValidation.isTaskImportanceCorrect(taskImportance) &&
+                InputValidation.isTaskDeadlineCorrect(taskDeadline))
+            {
+                databaseManager.insertRow(taskName, taskDeadline, taskImportance);
+            }
+            else
+            {
+                Console.WriteLine("Not correct");
+            }
             return View("~/Views/InsertTask.cshtml");
         }
     }

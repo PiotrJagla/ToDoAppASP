@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B3+bDm3Qv0azbAzAx8P61U3ri6eBY/do4kMg48WbuMxet7gX24HXYD1qN4BCH3Ye5tF3cBmZtPNPZY9hRClgvA==",
+  "dgSpecHash": "VehkPoWn3Aa2XZiW9IcjXQ4muv3rVnQNG9e6lh7EGNrac8k49/GMZ8L7Es97iwbhE6tMuZpz1E3bXVQOMWnOMg==",
   "success": true,
-  "projectFilePath": "D:\\VisualStudioProjects\\C#\\ASP.NET core\\TODOapp\\TODOapp.csproj",
+  "projectFilePath": "D:\\Program Files (x86)\\GitHub\\ToDoAppASP\\TODOapp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\piotr\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",

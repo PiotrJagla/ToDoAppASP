@@ -52,7 +52,7 @@ namespace TODOapp.Data
             List<string> columnsNames = new List<string>();
             databaseConnection.Open();
 
-            MySqlCommand getAllDataSQLQuery = new MySqlCommand(
+            MySqlCommand getColumnsNames = new MySqlCommand(
                 "SELECT " +
                 "tasks.taskID AS 'ID'," +
                 "tasks.taskName AS 'Name'," +
@@ -61,13 +61,31 @@ namespace TODOapp.Data
                 "tasks.isTaskDone AS 'Is done'" +
                 "FROM tasks; ",
                 databaseConnection);
-            MySqlDataReader dataReader = getAllDataSQLQuery.ExecuteReader();
+            MySqlDataReader dataReader = getColumnsNames.ExecuteReader();
             DataTable tableSchema = dataReader.GetSchemaTable();
 
             foreach (DataRow column in tableSchema.Rows)
                 columnsNames.Add(column.Field<string>("ColumnName"));
+
             databaseConnection.Close();
             return columnsNames;
+        }
+
+        public void insertRow(string taskName, string taskDeadline, string taskImportance)
+        {
+            databaseConnection.Open();
+
+            string data = "INSERT INTO" +
+                " tasks(taskName, taskDeadline, isTaskDone, taskImportance) " +
+                "VALUES('" + taskName + "', '" + taskDeadline + "', 'NO', '" + taskImportance + "');";
+
+            //MySqlCommand insertRowIntoDatabase = new MySqlCommand("INSERT INTO" +
+            //    " tasks(taskName, taskDeadline, isTaskDone, taskImportance) " +
+            //    "VALUES('" + taskName + "', '" + taskDeadline + "', 'NO', '" + taskImportance + "');",
+            //    databaseConnection
+            //);
+
+            databaseConnection.Close();
         }
 
 

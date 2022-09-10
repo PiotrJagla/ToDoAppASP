@@ -847,11 +847,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VisualStudioProjects\\C#\\ASP.NET core\\TODOapp\\TODOapp.csproj",
+      "projectUniqueName": "D:\\Program Files (x86)\\GitHub\\ToDoAppASP\\TODOapp.csproj",
       "projectName": "TODOapp",
-      "projectPath": "D:\\VisualStudioProjects\\C#\\ASP.NET core\\TODOapp\\TODOapp.csproj",
+      "projectPath": "D:\\Program Files (x86)\\GitHub\\ToDoAppASP\\TODOapp.csproj",
       "packagesPath": "C:\\Users\\piotr\\.nuget\\packages\\",
-      "outputPath": "D:\\VisualStudioProjects\\C#\\ASP.NET core\\TODOapp\\obj\\",
+      "outputPath": "D:\\Program Files (x86)\\GitHub\\ToDoAppASP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\piotr\\AppData\\Roaming\\NuGet\\NuGet.Config",
