@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Enter task data</h3>
+
+<div class="TaskInsertMenu">
+    @using(Html.BeginForm("InsertNewTaskToDatabase","ToDoApp"))
+    {
+        <input name="taskName"/>
+        <label>Enter Task name(Max 50 characters)</label><br />
+
+        <input name="taskDeadline"/>
+        <label>Enter Task deadline(YYYY-MM-DD HH-MM-SS ex.2000-09-12 16-54-00)</label><br />
+
+        <input name="taskImportance"/>
+        <label>Enter task importance (very important or important or not important)</label><br />
+
+        <button type="submit"> Confirm </button>
+    }
+</div>
+
+
+<div id="backToMainMenu">
+
+</div>
+
+@section Scripts{
+
+    <script>
+
+        $('#backToMainMenu').load("/ToDoApp/RenderReturnToMainMenuPartial")
+
+    </script>
+
+}

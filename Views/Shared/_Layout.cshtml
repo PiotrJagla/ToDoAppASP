@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" type="text/css"/>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <h1>To Do List web application</h1>
+    <div>
+        @RenderBody()
+    </div>
+    <div>
+        @RenderSection("Scripts")
+    </div>
+</body>
+</html>

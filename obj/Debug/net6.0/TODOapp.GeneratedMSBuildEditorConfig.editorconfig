@@ -1,0 +1,36 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TODOapp
+build_property.RootNamespace = TODOapp
+build_property.ProjectDir = D:\VisualStudioProjects\C#\ASP.NET core\TODOapp\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\VisualStudioProjects\C#\ASP.NET core\TODOapp
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/VisualStudioProjects/C\#/ASP.NET core/TODOapp/Views/InsertTask.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zZXJ0VGFzay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudioProjects/C\#/ASP.NET core/TODOapp/Views/MainMenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbk1lbnUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudioProjects/C\#/ASP.NET core/TODOapp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudioProjects/C\#/ASP.NET core/TODOapp/Views/Shared/_returnToMainMenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9yZXR1cm5Ub01haW5NZW51LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudioProjects/C\#/ASP.NET core/TODOapp/Views/ToDoList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9Eb0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

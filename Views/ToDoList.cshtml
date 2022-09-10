@@ -1,0 +1,48 @@
+﻿@using TODOapp.Models
+
+@model Tuple<List<TaskModel>, List<string>>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="allDatabaseData">
+
+    <table class="tasksSchemaTable">
+        <tr class="columnsNames">
+            @for(int iii = 1; iii < Model.Item2.Count; ++iii)
+            {
+                <td>@(Model.Item2[iii])</td>
+            }
+        </tr>
+
+        @foreach(TaskModel oneTask in Model.Item1)
+        {
+            <tr class="singleTaskData">
+                <td>@(oneTask.taskName ) </td>
+                <td>@(oneTask.taskDeadline )</td>
+                <td>@(oneTask.isTaskDone )</td>
+                <td>@(oneTask.taskImportance )</td>
+            </tr> 
+        }
+    </table>
+</div>
+
+<div id="backToMainMenu">
+
+</div>
+
+@section Scripts{
+
+    <script>
+
+        $('#backToMainMenu').load("/ToDoApp/RenderReturnToMainMenuPartial")
+
+    </script>
+
+}
+
+
+
+
+

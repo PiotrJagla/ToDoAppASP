@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h3>Main Menu</h3>
+
+<div class="NavigateToShowTasks">
+    <br />
+    @using(Html.BeginForm("ShowAllTasks", "ToDoApp"))
+    {
+        <button type="submit">
+            Show all tasks
+        </button>
+    }
+</div>
+
+<div class="NavigateToInsertTask">
+    <br />
+    @using(Html.BeginForm("NavigateToTaskInsertPage", "ToDoApp"))
+    {
+        <button type="submit">
+            Insert new task
+        </button>
+    }
+</div>
+
+
+@section Scripts{
+
+}
