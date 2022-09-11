@@ -31,6 +31,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9yZXR1cm5Ub01haW5NZW51LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Program Files (x86)/GitHub/ToDoAppASP/Views/TasksSearching.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza3NTZWFyY2hpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Program Files (x86)/GitHub/ToDoAppASP/Views/ToDoList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9Eb0xpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

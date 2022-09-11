@@ -43,6 +43,20 @@ namespace TODOapp.Controllers
             return View("~/Views/ToDoList.cshtml", databaseDataAndColumnsNames);
         }
 
+        public IActionResult NavigateToTasksSearching()
+        {
+            return View("~/Views/TasksSearching.cshtml");
+        }
+
+        public IActionResult DeleteDoneTasks()
+        {
+            Tuple<List<TaskModel>, List<string>> databaseDataAndColumnsNames = new Tuple<List<TaskModel>, List<string>>(
+                databaseManager.getAllData(), databaseManager.getColumnsNames()
+            );
+            databaseManager.deleteDoneTasks();
+            return View("~/Views/ToDoList.cshtml", databaseDataAndColumnsNames);
+        }
+
         public IActionResult ChangeSelectedTaskStatusToDone(string taskID)
         {
             databaseManager.changeTaskStatusToDone(taskID);
@@ -52,18 +66,20 @@ namespace TODOapp.Controllers
         public IActionResult InsertNewTaskToDatabase(string taskName, string taskDeadline, string taskImportance)
         {
             bool isTaskInserted = true;
-            //Console.WriteLine(taskName + " " + taskDeadline + " " + taskImportance);
-            if(InputValidation.isTaskNameCorrect(taskName) &&
-                InputValidation.isTaskImportanceCorrect(taskImportance) &&
-                InputValidation.isTaskDeadlineCorrect(taskDeadline))
-            {
+
+            if (this.validateUserInput(taskName, taskDeadline, taskImportance) == true)
                 databaseManager.insertRow(taskName, taskDeadline, taskImportance);
-            }
             else
-            {
                 isTaskInserted = false;
-            }
+
             return View("~/Views/InsertTask.cshtml", isTaskInserted);
+        }
+
+        private bool validateUserInput(string taskName, string taskDeadline, string taskImportance)
+        {
+            return InputValidation.isTaskNameCorrect(taskName) &&
+                InputValidation.isTaskImportanceCorrect(taskImportance) &&
+                 InputValidation.isTaskDeadlineCorrect(taskDeadline);
         }
     }
 }

@@ -1,0 +1,23 @@
+﻿@using TODOapp.Models
+
+@model Tuple<List<TaskModel>, List<string>>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Search tasks</h3>
+
+<div id="backToMainMenu">
+
+</div>
+
+@section Scripts{
+
+    <script>
+
+        $('#backToMainMenu').load("/ToDoApp/RenderReturnToMainMenuPartial")
+
+    </script>
+
+}

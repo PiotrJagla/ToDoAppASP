@@ -36,6 +36,16 @@
     }
 </div>
 
+<div class="NavigateToTasks Searching">
+    <br />
+    @using(Html.BeginForm("NavigateToTasksSearching", "ToDoApp"))
+    {
+        <button type="submit">
+            Search for certain tasks
+        </button>
+    }
+</div>
+
 
 @section Scripts{
 

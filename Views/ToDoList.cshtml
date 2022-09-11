@@ -28,6 +28,15 @@
     </table>
 </div>
 
+<div>
+    @using(Html.BeginForm("DeleteDoneTasks", "ToDoApp"))
+    {
+        <button type="submit">
+            Delete all done tasks
+        </button>
+    }
+</div>
+
 <div id="backToMainMenu">
 
 </div>

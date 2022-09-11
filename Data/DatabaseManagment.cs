@@ -100,6 +100,20 @@ namespace TODOapp.Data
             databaseConnection.Close();
         }
 
+        public void deleteDoneTasks()
+        {
+            databaseConnection.Open();
+
+            MySqlCommand insertRowIntoDatabase = new MySqlCommand(
+                "DELETE FROM tasks " +
+                "WHERE isTaskDone = 'YES'",
+                databaseConnection
+            );
+            insertRowIntoDatabase.ExecuteNonQuery();
+
+            databaseConnection.Close();
+        }
+
 
     }
 } 
