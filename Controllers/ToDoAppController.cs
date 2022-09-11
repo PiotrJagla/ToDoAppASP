@@ -25,21 +25,33 @@ namespace TODOapp.Controllers
             return PartialView("~/Views/Shared/_returnToMainMenu.cshtml");
         }
 
-        public IActionResult ShowAllTasks()
-        {
-            Tuple<List<TaskModel>, List<string>> databaseDataAndColumnsNames =new Tuple<List<TaskModel>, List<string>>(
-                databaseManager.getAllData(), databaseManager.getColumnsNames()
-            );
-            return View("~/Views/ToDoList.cshtml", databaseDataAndColumnsNames);
-        }
-
         public IActionResult NavigateToTaskInsertPage()
         {
             return View("~/Views/InsertTask.cshtml");
         }
 
+        public IActionResult NavigateToUpdateTaskInformation()
+        {
+            return View("~/Views/UpdateTaskInformation.cshtml", databaseManager.getAllData());
+        }
+
+        public IActionResult NavigateToAllTasksData()
+        {
+            Tuple<List<TaskModel>, List<string>> databaseDataAndColumnsNames = new Tuple<List<TaskModel>, List<string>>(
+                databaseManager.getAllData(), databaseManager.getColumnsNames()
+            );
+            return View("~/Views/ToDoList.cshtml", databaseDataAndColumnsNames);
+        }
+
+        public IActionResult ChangeSelectedTaskStatusToDone(string taskID)
+        {
+            databaseManager.changeTaskStatusToDone(taskID);
+            return View("~/Views/UpdateTaskInformation.cshtml", databaseManager.getAllData());
+        }
+
         public IActionResult InsertNewTaskToDatabase(string taskName, string taskDeadline, string taskImportance)
         {
+            bool isTaskInserted = true;
             //Console.WriteLine(taskName + " " + taskDeadline + " " + taskImportance);
             if(InputValidation.isTaskNameCorrect(taskName) &&
                 InputValidation.isTaskImportanceCorrect(taskImportance) &&
@@ -49,9 +61,9 @@ namespace TODOapp.Controllers
             }
             else
             {
-                Console.WriteLine("Not correct");
+                isTaskInserted = false;
             }
-            return View("~/Views/InsertTask.cshtml");
+            return View("~/Views/InsertTask.cshtml", isTaskInserted);
         }
     }
 }

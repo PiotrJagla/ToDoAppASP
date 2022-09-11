@@ -8,7 +8,7 @@
 
 <div class="NavigateToShowTasks">
     <br />
-    @using(Html.BeginForm("ShowAllTasks", "ToDoApp"))
+    @using(Html.BeginForm("NavigateToAllTasksData", "ToDoApp"))
     {
         <button type="submit">
             Show all tasks
@@ -22,6 +22,16 @@
     {
         <button type="submit">
             Insert new task
+        </button>
+    }
+</div>
+
+<div class="NavigateToUpdateTaskData">
+    <br />
+    @using(Html.BeginForm("NavigateToUpdateTaskInformation", "ToDoApp"))
+    {
+        <button type="submit">
+            Update task
         </button>
     }
 </div>

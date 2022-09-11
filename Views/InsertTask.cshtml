@@ -1,4 +1,6 @@
-﻿@{
+﻿@model bool
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -18,6 +20,14 @@
 
         <button type="submit"> Confirm </button>
     }
+</div>
+
+<div class="isTaskInsertedMessage">
+    @if(Model == true)
+    {
+        <p>Task inserted sucessfully!</p>
+    }
+
 </div>
 
 

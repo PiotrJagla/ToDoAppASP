@@ -75,15 +75,27 @@ namespace TODOapp.Data
         {
             databaseConnection.Open();
 
-            string data = "INSERT INTO" +
+            MySqlCommand insertRowIntoDatabase = new MySqlCommand("INSERT INTO" +
                 " tasks(taskName, taskDeadline, isTaskDone, taskImportance) " +
-                "VALUES('" + taskName + "', '" + taskDeadline + "', 'NO', '" + taskImportance + "');";
+                "VALUES('" + taskName + "', '" + taskDeadline + "', 'NO', '" + taskImportance + "');",
+                databaseConnection
+            );
+            insertRowIntoDatabase.ExecuteNonQuery();
 
-            //MySqlCommand insertRowIntoDatabase = new MySqlCommand("INSERT INTO" +
-            //    " tasks(taskName, taskDeadline, isTaskDone, taskImportance) " +
-            //    "VALUES('" + taskName + "', '" + taskDeadline + "', 'NO', '" + taskImportance + "');",
-            //    databaseConnection
-            //);
+            databaseConnection.Close();
+        }
+
+        public void changeTaskStatusToDone(string taskID)
+        {
+            databaseConnection.Open();
+
+            MySqlCommand insertRowIntoDatabase = new MySqlCommand(
+                "UPDATE tasks " +
+                "SET isTaskDone = 'YES'" +
+                "WHERE taskID =" + taskID,
+                databaseConnection
+            );
+            insertRowIntoDatabase.ExecuteNonQuery();
 
             databaseConnection.Close();
         }

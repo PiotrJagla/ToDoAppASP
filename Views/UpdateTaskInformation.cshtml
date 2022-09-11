@@ -1,0 +1,44 @@
+﻿@using TODOapp.Models
+
+@model List<TaskModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Update task data</h3>
+
+<div class="tasksNames">
+    @using(Html.BeginForm("ChangeSelectedTaskStatusToDone", "ToDoApp"))
+    {
+        foreach(TaskModel task in Model)
+        {
+            @Html.RadioButton("taskID", task.taskID);
+            <label>@task.taskName</label>
+            <br />
+        }
+
+        <button type="submit">
+            Change to done
+        </button>
+    }
+
+</div>
+
+
+
+<div id="backToMainMenu">
+
+</div>
+
+@section Scripts{
+
+    <script>
+
+        $('#backToMainMenu').load("/ToDoApp/RenderReturnToMainMenuPartial")
+
+    </script>
+
+}
+
+
