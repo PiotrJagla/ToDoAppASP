@@ -13,8 +13,8 @@
     {
         foreach(TaskModel task in Model)
         {
-            @Html.RadioButton("taskID", task.taskID);
-            <label>@task.taskName</label>
+            @Html.RadioButton("ID", task.ID);
+            <label>@task.Name</label>
             <br />
         }
 

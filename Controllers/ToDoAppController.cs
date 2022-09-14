@@ -11,7 +11,6 @@ namespace TODOapp.Controllers
 
         public IActionResult Initialize()
         {
-            databaseManager.getColumnsNames();
             return View("~/Views/MainMenu.cshtml");
         }
 
@@ -32,6 +31,7 @@ namespace TODOapp.Controllers
 
         public IActionResult NavigateToUpdateTaskInformation()
         {
+
             return View("~/Views/UpdateTaskInformation.cshtml", databaseManager.getAllData());
         }
 
@@ -45,7 +45,8 @@ namespace TODOapp.Controllers
 
         public IActionResult NavigateToTasksSearching()
         {
-            return View("~/Views/TasksSearching.cshtml");
+            return View("~/Views/TasksSearching.cshtml", new Tuple<List<TaskModel>, List<string>>(
+                new List<TaskModel>(), databaseManager.getColumnsNames()));
         }
 
         public IActionResult DeleteDoneTasks()
@@ -61,6 +62,12 @@ namespace TODOapp.Controllers
         {
             databaseManager.changeTaskStatusToDone(taskID);
             return View("~/Views/UpdateTaskInformation.cshtml", databaseManager.getAllData());
+        }
+
+        public IActionResult UserInputTasksSearching(string columnName, string taskSearchTerm)
+        {
+            return View("~/Views/TasksSearching.cshtml", new Tuple<List<TaskModel>, List<string>>(
+                databaseManager.getColumnData(columnName, taskSearchTerm), databaseManager.getColumnsNames()));
         }
 
         public IActionResult InsertNewTaskToDatabase(string taskName, string taskDeadline, string taskImportance)

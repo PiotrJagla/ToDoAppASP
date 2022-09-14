@@ -5,17 +5,17 @@
         public TaskModel(int taskID, string taskName,
             string taskDeadline, string isTaskDone, string taskImportance)
         {
-            this.taskID = taskID;
-            this.taskName = taskName;
-            this.taskDeadline = taskDeadline;
-            this.isTaskDone = isTaskDone;
-            this.taskImportance = taskImportance;
+            this.ID = taskID;
+            this.Name = taskName;
+            this.Deadline = taskDeadline;
+            this.IsDone = isTaskDone;
+            this.Importance = taskImportance;
         }
 
-        public int taskID { get; set; }
-        public string taskName { get; set; }
-        public string taskDeadline { get; set; }
-        public string isTaskDone { get; set; }
-        public string taskImportance { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Deadline { get; set; }
+        public string IsDone { get; set; }
+        public string Importance { get; set; }
     }
 }

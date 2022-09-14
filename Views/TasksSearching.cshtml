@@ -6,7 +6,52 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h3>Search tasks</h3>
+<h3>Search for tasks by</h3>
+
+<div class="tasksNames">
+    @using (Html.BeginForm("UserInputTasksSearching", "ToDoApp"))
+    {
+        for (int iii = 1; iii < Model.Item2.Count; ++iii)
+        {
+            @Html.RadioButton("columnName", Model.Item2[iii])
+            ;
+            <label>@Model.Item2[iii]</label>
+        }
+        <br />
+
+        <input name="taskSearchTerm" />
+        <label>Enter what to find</label><br />
+
+        <button type="submit">
+            Search
+        </button>
+    }
+
+</div>
+
+<p>Result:</p>
+
+<div class="foundTasks">
+
+    <table class="tasksSchemaTable">
+        <tr class="columnsNames">
+            @for(int iii = 1; iii < Model.Item2.Count; ++iii)
+            {
+                <td>@(Model.Item2[iii])</td>
+            }
+        </tr>
+
+        @foreach(TaskModel oneTask in Model.Item1)
+        {
+            <tr class="singleTaskData">
+                <td>@(oneTask.Name ) </td>
+                <td>@(oneTask.Deadline )</td>
+                <td>@(oneTask.IsDone )</td>
+                <td>@(oneTask.Importance )</td>
+            </tr> 
+        }
+    </table>
+</div>
 
 <div id="backToMainMenu">
 

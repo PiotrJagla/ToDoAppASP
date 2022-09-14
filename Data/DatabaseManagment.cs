@@ -52,23 +52,47 @@ namespace TODOapp.Data
             List<string> columnsNames = new List<string>();
             databaseConnection.Open();
 
-            MySqlCommand getColumnsNames = new MySqlCommand(
-                "SELECT " +
-                "tasks.taskID AS 'ID'," +
-                "tasks.taskName AS 'Name'," +
-                "tasks.taskDeadline AS 'Deadline'," +
-                "tasks.taskImportance AS 'Importance', " +
-                "tasks.isTaskDone AS 'Is done'" +
-                "FROM tasks; ",
-                databaseConnection);
+            MySqlCommand getColumnsNames = new MySqlCommand("SELECT * FROM tasks", databaseConnection);
             MySqlDataReader dataReader = getColumnsNames.ExecuteReader();
             DataTable tableSchema = dataReader.GetSchemaTable();
 
             foreach (DataRow column in tableSchema.Rows)
-                columnsNames.Add(column.Field<string>("ColumnName"));
+                columnsNames.Add(
+                    StringManipulation.addSpaceBeforeBigLetter(
+                        column.Field<string>("ColumnName")
+                    )
+                );
 
             databaseConnection.Close();
             return columnsNames;
+        }
+
+        public List<TaskModel> getColumnData(string columnName, string searchTerm)
+        {
+            List<TaskModel> allDataFromQuery = new List<TaskModel>();
+            databaseConnection.Open();
+
+
+
+            MySqlCommand queryCommand = new MySqlCommand(
+                "SELECT * FROM tasks WHERE " + StringManipulation.removeCharFromString(columnName, ' ') +
+                " LIKE '%" + searchTerm + "%';",
+                databaseConnection);
+            MySqlDataReader dataReader = queryCommand.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                allDataFromQuery.Add(new TaskModel(
+                    dataReader.GetInt32(0),
+                    dataReader.GetString(1),
+                    dataReader.GetString(2),
+                    dataReader.GetString(3),
+                    dataReader.GetString(4))
+                );
+            }
+
+            databaseConnection.Close();
+            return allDataFromQuery;
         }
 
         public void insertRow(string taskName, string taskDeadline, string taskImportance)
@@ -76,7 +100,7 @@ namespace TODOapp.Data
             databaseConnection.Open();
 
             MySqlCommand insertRowIntoDatabase = new MySqlCommand("INSERT INTO" +
-                " tasks(taskName, taskDeadline, isTaskDone, taskImportance) " +
+                " tasks(Name, Deadline, IsDone, Importance) " +
                 "VALUES('" + taskName + "', '" + taskDeadline + "', 'NO', '" + taskImportance + "');",
                 databaseConnection
             );
@@ -91,8 +115,8 @@ namespace TODOapp.Data
 
             MySqlCommand insertRowIntoDatabase = new MySqlCommand(
                 "UPDATE tasks " +
-                "SET isTaskDone = 'YES'" +
-                "WHERE taskID =" + taskID,
+                "SET IsDone = 'YES'" +
+                "WHERE ID =" + taskID,
                 databaseConnection
             );
             insertRowIntoDatabase.ExecuteNonQuery();
@@ -106,7 +130,7 @@ namespace TODOapp.Data
 
             MySqlCommand insertRowIntoDatabase = new MySqlCommand(
                 "DELETE FROM tasks " +
-                "WHERE isTaskDone = 'YES'",
+                "WHERE IsDone = 'YES'",
                 databaseConnection
             );
             insertRowIntoDatabase.ExecuteNonQuery();
