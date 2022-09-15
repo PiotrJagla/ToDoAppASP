@@ -74,19 +74,12 @@ namespace TODOapp.Controllers
         {
             bool isTaskInserted = true;
 
-            if (this.validateUserInput(taskName, taskDeadline, taskImportance) == true)
+            if (InputValidation.isInputCorrect(taskName, taskDeadline, taskImportance) == true)
                 databaseManager.insertRow(taskName, taskDeadline, taskImportance);
             else
                 isTaskInserted = false;
 
             return View("~/Views/InsertTask.cshtml", isTaskInserted);
-        }
-
-        private bool validateUserInput(string taskName, string taskDeadline, string taskImportance)
-        {
-            return InputValidation.isTaskNameCorrect(taskName) &&
-                InputValidation.isTaskImportanceCorrect(taskImportance) &&
-                 InputValidation.isTaskDeadlineCorrect(taskDeadline);
         }
     }
 }

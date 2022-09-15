@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[2.2.10, )"
             },
+            "Microsoft.CodeDom.Providers.DotNetCompilerPlatform": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.3.1, )"
@@ -127,6 +131,10 @@
             "MSTest.TestFramework": {
               "target": "Package",
               "version": "[2.2.10, )"
+            },
+            "Microsoft.CodeDom.Providers.DotNetCompilerPlatform": {
+              "target": "Package",
+              "version": "[3.6.0, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",

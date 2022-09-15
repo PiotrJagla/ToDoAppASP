@@ -4,19 +4,26 @@
     {
         private static int daysInFebruary = 0;
 
-        public static bool isTaskNameCorrect(string taskName)
+        public static bool isInputCorrect(string taskName, string taskDeadline, string taskImportance)
+        {
+            return isTaskNameCorrect(taskName) &&
+                   isTaskImportanceCorrect(taskImportance) &&
+                   isTaskDeadlineCorrect(taskDeadline);
+        }
+
+        private static bool isTaskNameCorrect(string taskName)
         {
             return taskName.Length <= 50;
         }
 
-        public static bool isTaskImportanceCorrect(string taskImportance)
+        private static bool isTaskImportanceCorrect(string taskImportance)
         {
             return taskImportance.ToLower() == "not important" ||
                 taskImportance.ToLower() == "important" ||
                 taskImportance.ToLower() == "very important";
         }
 
-        public static bool isTaskDeadlineCorrect(string taskDeadline)
+        private static bool isTaskDeadlineCorrect(string taskDeadline)
         {
             return areThereLettersInTaskDeadline(taskDeadline) == false &&
                 areDashesInCorrectPlacec(taskDeadline) == true &&
@@ -58,33 +65,20 @@
 
         private static bool isDateAndTimeInCorrectFormat(string taskDeadline)
         {
-            int indexOfSpace = taskDeadline.IndexOf(' ');
-            string date = taskDeadline.Substring(0, indexOfSpace);
-            string time = taskDeadline.Substring(indexOfSpace + 1, taskDeadline.Length - 1 - indexOfSpace);
+            List<string> date_time = StringManipulation.extractStrinsSeparatedByChar(taskDeadline, ' ');
 
-
-            return isDateInCorrectFormat(date) == true && isTimeInCorrectFormat(time) == true;
+            return isDateInCorrectFormat(date_time[0]) == true &&
+                   isTimeInCorrectFormat(date_time[1]) == true;
         }
 
         private static bool isDateInCorrectFormat(string date)
         {
-            //YYYY-MM-DD
-            int[] dashesIndexes = new int[2] { 4, 7 };
+            List<string> year_month_day = StringManipulation.extractStrinsSeparatedByChar(date, '-');
 
-            int year = SafeConversion.StringToInt(
-                date.Substring(0, dashesIndexes[0])
-            );
-
-            int month = SafeConversion.StringToInt(
-                date.Substring(dashesIndexes[0] + 1, dashesIndexes[1] - dashesIndexes[0] - 1)
-            );
-
-            int day = SafeConversion.StringToInt(
-                date.Substring(dashesIndexes[1] + 1 , date.Length - dashesIndexes[1] - 1)
-            );
-
-            isLeapYear(year);
-            return isCorrectDayOfMonth(month,day) == true && year <= 9999 && year >= 1000;
+            isLeapYear(SafeConversion.StringToInt(year_month_day[0]));
+            return isCorrectDayOfMonth(SafeConversion.StringToInt(year_month_day[1]),SafeConversion.StringToInt(year_month_day[2])) == true &&
+                SafeConversion.StringToInt(year_month_day[0]) <= 9999 &&
+                SafeConversion.StringToInt(year_month_day[0]) >= 1000;
         }
 
         private static void isLeapYear(int year)
@@ -121,9 +115,13 @@
 
             int secounds = SafeConversion.StringToInt(
                 time.Substring(dashesIndexes[1] + 1, time.Length - dashesIndexes[1] - 1)
-            ); 
+            );
 
-            return hours <= 23 && minutes <= 59 && secounds <= 59;
+            List<string> hours_minutes_secounds = StringManipulation.extractStrinsSeparatedByChar(time, '-');
+
+            return SafeConversion.StringToInt(hours_minutes_secounds[0]) <= 23 &&
+                   SafeConversion.StringToInt(hours_minutes_secounds[1]) <= 59 &&
+                   SafeConversion.StringToInt(hours_minutes_secounds[2]) <= 59;
         }
 
     }
