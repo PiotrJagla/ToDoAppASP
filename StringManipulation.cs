@@ -1,4 +1,6 @@
-﻿namespace TODOapp
+﻿
+
+namespace TODOapp
 {
     public class StringManipulation
     {
@@ -40,8 +42,9 @@
 
             return stringWithoutSpecifiedChar;
         }
-        
+        //<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	    //<RuntimeIdentifier>win10-x64</RuntimeIdentifier>
 
-        
+
     }
 }

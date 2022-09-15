@@ -1,0 +1,6 @@
+D:\Program Files (x86)\GitHub\ToDoAppASP\obj\Release\net6.0\TODOapp.csproj.AssemblyReference.cache
+D:\Program Files (x86)\GitHub\ToDoAppASP\obj\Release\net6.0\TODOapp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Program Files (x86)\GitHub\ToDoAppASP\obj\Release\net6.0\TODOapp.csproj.CoreCompileInputs.cache
+D:\Program Files (x86)\GitHub\ToDoAppASP\obj\Release\net6.0\TODOapp.MvcApplicationPartsAssemblyInfo.cache
+D:\Program Files (x86)\GitHub\ToDoAppASP\obj\Release\net6.0\TODOapp.RazorAssemblyInfo.cache
+D:\Program Files (x86)\GitHub\ToDoAppASP\obj\Release\net6.0\TODOapp.RazorAssemblyInfo.cs
