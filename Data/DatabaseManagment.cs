@@ -67,12 +67,12 @@ namespace TODOapp.Data
             return columnsNames;
         }
 
-        public List<TaskModel> getColumnData(string columnName, string searchTerm)
+        public List<TaskModel> getDataFoundByColumnSearchTerm(string columnName, string searchTerm)
         {
+            if (string.IsNullOrEmpty(columnName)) return new List<TaskModel>();
+
             List<TaskModel> allDataFromQuery = new List<TaskModel>();
             databaseConnection.Open();
-
-
 
             MySqlCommand queryCommand = new MySqlCommand(
                 "SELECT * FROM tasks WHERE " + StringManipulation.removeCharFromString(columnName, ' ') +

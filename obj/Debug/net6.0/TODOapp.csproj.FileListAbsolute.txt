@@ -219,3 +219,16 @@ D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\
 D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest.runtimeconfig.json
 D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\obj\project.assets.json
 D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\obj\ToDoAppTest.csproj.nuget.dgspec.json
+D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\roslyn\csc.exe.config
+D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\roslyn\csi.exe.config
+D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\roslyn\vbc.exe.config
+D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\roslyn\VBCSCompiler.exe.config
+D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\appsettings.Development.json
+D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\appsettings.json
+D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\TODOapp.deps.json
+D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\TODOapp.runtimeconfig.json
+D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\TODOapp.staticwebassets.runtime.json
+D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest.deps.json
+D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest.runtimeconfig.json
+D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\obj\project.assets.json
+D:\Program Files (x86)\GitHub\ToDoAppASP\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\bin\Debug\net6.0\ToDoAppTest\obj\ToDoAppTest.csproj.nuget.dgspec.json

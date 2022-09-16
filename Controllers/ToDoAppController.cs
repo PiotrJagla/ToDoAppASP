@@ -58,16 +58,16 @@ namespace TODOapp.Controllers
             return View("~/Views/ToDoList.cshtml", databaseDataAndColumnsNames);
         }
 
-        public IActionResult ChangeSelectedTaskStatusToDone(string taskID)
+        public IActionResult ChangeSelectedTaskStatusToDone(string ID)
         {
-            databaseManager.changeTaskStatusToDone(taskID);
+            databaseManager.changeTaskStatusToDone(ID);
             return View("~/Views/UpdateTaskInformation.cshtml", databaseManager.getAllData());
         }
 
         public IActionResult UserInputTasksSearching(string columnName, string taskSearchTerm)
-        {
+        { 
             return View("~/Views/TasksSearching.cshtml", new Tuple<List<TaskModel>, List<string>>(
-                databaseManager.getColumnData(columnName, taskSearchTerm), databaseManager.getColumnsNames()));
+                databaseManager.getDataFoundByColumnSearchTerm(columnName, taskSearchTerm), databaseManager.getColumnsNames()));
         }
 
         public IActionResult InsertNewTaskToDatabase(string taskName, string taskDeadline, string taskImportance)

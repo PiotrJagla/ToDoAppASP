@@ -13,7 +13,7 @@
     {
         foreach(TaskModel task in Model)
         {
-            @Html.RadioButton("ID", task.ID);
+            @Html.RadioButton("ID", Convert.ToString(task.ID));
             <label>@task.Name</label>
             <br />
         }

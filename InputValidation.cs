@@ -34,7 +34,6 @@
         {
             for(int iii = 0; iii < taskDeadline.Length; ++iii)
             { 
-
                 if ((SafeConversion.CharToInt(taskDeadline.ElementAt(iii)) < 48 ||
                     SafeConversion.CharToInt(taskDeadline.ElementAt(iii)) > 57) &&
                     (taskDeadline.ElementAt(iii) != ' ' && taskDeadline.ElementAt(iii) != '-'))
@@ -102,21 +101,6 @@
 
         private static bool isTimeInCorrectFormat(string time)
         {
-            //HH-MM-SS
-            int[] dashesIndexes = new int[2] { 2, 5 };
-
-            int hours = SafeConversion.StringToInt(
-                time.Substring(0, dashesIndexes[0])
-            );
-
-            int minutes =  SafeConversion.StringToInt(
-                    time.Substring(dashesIndexes[0]+1, dashesIndexes[1] - dashesIndexes[0] - 1)
-            );
-
-            int secounds = SafeConversion.StringToInt(
-                time.Substring(dashesIndexes[1] + 1, time.Length - dashesIndexes[1] - 1)
-            );
-
             List<string> hours_minutes_secounds = StringManipulation.extractStrinsSeparatedByChar(time, '-');
 
             return SafeConversion.StringToInt(hours_minutes_secounds[0]) <= 23 &&
